@@ -1,0 +1,20 @@
+# transmit-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: transmit-pod
+spec:
+  containers:
+  - name: transmit-container
+    image: transmit-image:latest
+    env:
+    - name: freq
+      value: "10"
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "250m"
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
